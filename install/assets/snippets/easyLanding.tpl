@@ -18,4 +18,4 @@
  *  &where - mysql where. Default  AND published=1
 */
  
-include_once MODX_BASE_PATH.'assets/snippets/easyLanding/snippet.easyLanding.php';
+include_once MODX_BASE_PATH.'assets/snippets/easyLanding/snippet.easylanding.php';
