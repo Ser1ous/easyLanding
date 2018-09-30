@@ -1,5 +1,5 @@
 <?php
-class Lending extends DocumentParser{
+class Landing extends DocumentParser{
 	public function outputContent($noEvent = false){
 		$this->documentOutput = $this->documentContent;
 		
@@ -12,8 +12,10 @@ class Lending extends DocumentParser{
             // Parse document source
             $this->documentOutput = $this->parseDocumentSource($this->documentOutput);
         }
+		
 		echo $this->documentOutput;
 	}
+	 
 }
 
 
@@ -33,7 +35,8 @@ $result = $modx->db->select("id", $modx->getFullTableName('site_content'), $para
 $childDoc = $modx->db->makeArray( $result );   
 
 foreach($childDoc as $doc){
-	$data_out = new Lending();
+	$data_out = new Landing();
+	$data_out->config = $modx->config;
 	$data_out->documentIdentifier = $doc['id'];
 	$data_out->documentMethod = 'id';
 	$data_out->prepareResponse();
